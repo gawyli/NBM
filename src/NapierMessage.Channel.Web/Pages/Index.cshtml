@@ -1,0 +1,97 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Form</title>
+</head>
+<body>
+    <form method="post">
+        <label for="messageId">Message ID:</label>
+        <input type="text" id="Id" name="Id"><br>
+
+        <label for="messageType">Message Type:</label>
+        <input type="text" id="type" name="type" value="Enter Message ID" readonly />
+
+        <div id="messageBody" style="display: none;">
+            <label for="messageBody">Message Body:</label><br>
+            <input type="text" id="sender" name="sender" placeholder="Sender"><br>
+            <input type="text" id="subject" name="subject" placeholder="Subject" hidden disabled><br>
+            <input type="text" id="messageText" name="messageText" placeholder="Text"><br>
+            
+        </div>
+
+        <button type="submit" id="submitButton" disabled>Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("Id").addEventListener("input", function () {
+            const messageId = document.getElementById("Id").value;
+            const messageType = document.getElementById("type");
+            const msgTypeInput = document.getElementById("msgTypeInput");
+            const submitButton = document.getElementById("submitButton");
+
+            const sender = document.getElementById("sender");
+            const subject = document.getElementById("subject");
+            const messageText = document.getElementById("messageText");
+
+            if (messageId.length > 0) {
+                const firstCharacter = messageId.charAt(0).toUpperCase(); // Convert to uppercase for case insensitivity
+
+                if (firstCharacter === 'S') {
+                    messageType.value = "Sms";
+                    submitButton.disabled = false;
+                    subject.hidden = true;
+                    subject.disabled = true;
+                }
+                else if (firstCharacter === 'E') {
+                    messageType.value = "Email";
+                    submitButton.disabled = false;
+                    subject.hidden = false;
+                    subject.disabled = false;
+                }
+                else if (firstCharacter === 'T') {
+                    messageType.value = "Tweet";
+                    submitButton.disabled = false;
+                    subject.hidden = true;
+                    subject.disabled = true;
+                }
+                else {
+                    messageType.textContent = "Invalid Message ID";
+                    
+                }
+            } else {
+                messageType.textContent = "Enter a Message ID";
+            }
+        });
+    </script>
+    <script>
+        document.getElementById("Id").addEventListener("input", function () {
+            const messageId = document.getElementById("Id").value;
+            const messageBody = document.getElementById("messageBody");
+            const messageType = document.getElementById("type").value;
+
+            if (messageType === "Sms") {
+                messageBody.style.display = "block";
+            } 
+            else if (messageType === "Email") {
+                messageBody.style.display = "block";
+            } 
+            else if (messageType === "Tweet") {
+                messageBody.style.display = "block";
+            } 
+            else {
+                messageBody.style.display = "none";
+                submitButton.disabled = true;
+            }
+        });
+    </script>
+ 
+</body>
+</html>
+
+

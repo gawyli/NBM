@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NapierMessage.Channel.Web", "src\NapierMessage.Channel.Web\NapierMessage.Channel.Web.csproj", "{FEEC5ED4-4F4E-45F3-A234-1D5746AE2624}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F1F59924-8489-4BD7-A069-BBF693AA47B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FBE2539E-AB70-4975-B69C-663BC145D840}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NapierMessage.Core", "src\NapierMessage.Core\NapierMessage.Core.csproj", "{7F9E99DC-CC11-423A-BB2F-F59E55326580}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NapierMessage.Infrastructure", "src\NapierMessage.Infrastructure\NapierMessage.Infrastructure.csproj", "{B7129EBD-39CB-4963-AB7D-198978113417}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NapierMessage.UnitTests", "tests\NapierMessage.UnitTests\NapierMessage.UnitTests.csproj", "{FA6F1D1A-2F6C-424B-A94A-DF82A6DC7132}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NapierMessage.SharedKernel", "src\NapierMessage.SharedKernel\NapierMessage.SharedKernel.csproj", "{2AB71306-14A0-4B2F-8BAA-480E616CF26E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FEEC5ED4-4F4E-45F3-A234-1D5746AE2624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEEC5ED4-4F4E-45F3-A234-1D5746AE2624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEEC5ED4-4F4E-45F3-A234-1D5746AE2624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEEC5ED4-4F4E-45F3-A234-1D5746AE2624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F9E99DC-CC11-423A-BB2F-F59E55326580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F9E99DC-CC11-423A-BB2F-F59E55326580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F9E99DC-CC11-423A-BB2F-F59E55326580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F9E99DC-CC11-423A-BB2F-F59E55326580}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7129EBD-39CB-4963-AB7D-198978113417}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7129EBD-39CB-4963-AB7D-198978113417}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7129EBD-39CB-4963-AB7D-198978113417}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7129EBD-39CB-4963-AB7D-198978113417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA6F1D1A-2F6C-424B-A94A-DF82A6DC7132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA6F1D1A-2F6C-424B-A94A-DF82A6DC7132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA6F1D1A-2F6C-424B-A94A-DF82A6DC7132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA6F1D1A-2F6C-424B-A94A-DF82A6DC7132}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB71306-14A0-4B2F-8BAA-480E616CF26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB71306-14A0-4B2F-8BAA-480E616CF26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB71306-14A0-4B2F-8BAA-480E616CF26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB71306-14A0-4B2F-8BAA-480E616CF26E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FEEC5ED4-4F4E-45F3-A234-1D5746AE2624} = {F1F59924-8489-4BD7-A069-BBF693AA47B9}
+		{7F9E99DC-CC11-423A-BB2F-F59E55326580} = {F1F59924-8489-4BD7-A069-BBF693AA47B9}
+		{B7129EBD-39CB-4963-AB7D-198978113417} = {F1F59924-8489-4BD7-A069-BBF693AA47B9}
+		{FA6F1D1A-2F6C-424B-A94A-DF82A6DC7132} = {FBE2539E-AB70-4975-B69C-663BC145D840}
+		{2AB71306-14A0-4B2F-8BAA-480E616CF26E} = {F1F59924-8489-4BD7-A069-BBF693AA47B9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECA03516-22B4-4B4B-AE24-F899980E8AF9}
+	EndGlobalSection
+EndGlobal
