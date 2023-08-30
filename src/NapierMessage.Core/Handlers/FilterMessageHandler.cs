@@ -41,15 +41,15 @@ public class FilterMessageHandler
 
             if (messageType == "Sms")
             {
-                messageJson = Message.ProcessSms(request.Message);
+                messageJson = Sms.ProcessSms(request.Message);
             }
             else if (messageType == "Email")
             {
-                messageJson = Message.ProcessEmail(request.Message);
+                messageJson = Email.ProcessEmail(request.Message);
             }
             else // Assume messageType is "Tweet" or something else
             {
-                messageJson = Message.ProcessTweet(request.Message);
+                messageJson = Tweet.ProcessTweet(request.Message);
             }
 
             await WriteToJson(messageJson, cancellationToken);

@@ -16,7 +16,7 @@ public class MessageRepository : IMessageRepository
 {
     public async Task WriteToJsonFile(JsonDocument messageJson, CancellationToken cancellationToken)
     {
-        Message message = JsonSerializer.Deserialize<Message>(messageJson);
+        Message message = JsonSerializer.Deserialize<Message>(messageJson)!;
 
         string messageId = message.Id;
         string messageType = message.Type;
@@ -32,11 +32,6 @@ public class MessageRepository : IMessageRepository
             string filePath = Path.Combine(catalogPath, $"{messageId}.json");
 
             messageJson.WriteJsonToFile(filePath);
-
-            //string message2 = JsonSerializer.Serialize(messageJson);
-            //await File.WriteAllTextAsync(filePath, message2, cancellationToken);
-
-            
 
             Console.WriteLine($"JSON data saved to {filePath}");
         }
