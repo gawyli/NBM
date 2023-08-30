@@ -32,11 +32,6 @@ public static class AbbreviationsUtils
             text = Regex.Replace(text, pattern, replacement);
         }
 
-        //foreach (var abbreviation in abbreviations)
-        //{
-        //    text = text.Replace(" " + abbreviation.Key, $"<{abbreviation.Value}>");
-        //}
-
         return text;
     }
 
