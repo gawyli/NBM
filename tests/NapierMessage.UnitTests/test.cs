@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.ObjectModel;
 using NapierMessage.Core.Models;
+using NapierMessage.SharedKernel.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,63 +10,26 @@ using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace NapierMessage.UnitTests;
-public class TweetProcessorTests
+public class TweetTests
 {
-
-    public TweetProcessorTests()
-    {
-    }
-
     [Fact]
-    public void ProcessTweet_WithTextspeak_ExpandsTextspeak()
+    public void TestProcessTweet()
     {
-        // Arrange
-        var tweet = new Tweet
+        var message = new Message()
         {
-            
-             
-            
+            Id = "1",
+            Type = "Tweet",
+            Body = new MessageBody()
+            {
+                MessageText = "Testing @mention and #hashtag"
+            }
         };
 
-        // Act
-        Message.ProcessTweet(tweet);
+        var expectedJson = JsonSerializer.Serialize(message, JsonUtils.JsonOptions);
 
-        // Assert
-        //Assert.Contains("<Later>", tweet);
-    }
+        var actualJson = Tweet.ProcessTweet(message);
+        var actualJsonString = JsonSerializer.Serialize(actualJson);
 
-    [Fact]
-    public void ProcessTweet_WithHashtag_AddsToHashtagList()
-    {
-        // Arrange
-        var tweet = new Tweet
-        {
-            Sender = "@jane",
-            Text = "Excited for #summervacation"
-        };
-
-        // Act
-        processor.Process(tweet);
-
-        // Assert
-        Assert.Contains("#summervacation", processor.HashtagList);
-        Assert.Equal(1, processor.HashtagList["#summervacation"]);
-    }
-
-    [Fact]
-    public void ProcessTweet_WithMention_AddsToMentionList()
-    {
-        // Arrange
-        var tweet = new Tweet
-        {
-            Sender = "@john",
-            Text = "Hey @jane check this out"
-        };
-
-        // Act
-        processor.Process(tweet);
-
-        // Assert
-        Assert.Contains("@jane", processor.MentionList);
+        Assert.Equivalent(expectedJson, actualJsonString);
     }
 }
